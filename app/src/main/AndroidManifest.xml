@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="io.fdp.android.sunshine.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName="io.fdp.android.sunshine.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.fdp.android.sunshine.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
