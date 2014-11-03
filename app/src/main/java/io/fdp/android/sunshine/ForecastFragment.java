@@ -250,7 +250,7 @@ public class ForecastFragment extends Fragment {
                 }
             }
             try {
-                getWeatherDataFromJson(forecastJsonStr, numDays);
+                return getWeatherDataFromJson(forecastJsonStr, numDays);
             } catch (JSONException e) {
                 Log.e("SUNSHINE.JSON.PARSER", e.getMessage(), e);
                 e.printStackTrace();
