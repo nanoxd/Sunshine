@@ -3,6 +3,7 @@ package io.fdp.android.sunshine;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -92,6 +93,7 @@ public class ForecastFragment extends Fragment {
             return true;
         }
 
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -107,6 +109,7 @@ public class ForecastFragment extends Fragment {
         locationFromSettings = sharedPrefs.getString("location", "");
         weatherTask.execute(locationFromSettings);
     }
+
 
     public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
 
