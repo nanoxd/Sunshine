@@ -11,5 +11,9 @@
     <string name="pref_location_label">Location</string>
     <string name="pref_location_key">location</string>
     <string name="pref_location_default">98122</string>
+    <string name="pref_unit_label">Units</string>
+    <string name="pref_unit_key">units</string>
+    <string name="pref_unit_metric">Metric</string>
+    <string name="pref_unit_imperial">Imperial</string>
 
 </resources>
