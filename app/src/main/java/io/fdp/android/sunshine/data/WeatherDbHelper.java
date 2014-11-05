@@ -29,7 +29,7 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
         // location setting, the city name, and the latitude and longitude
         final String SQL_CREATE_LOCATION_TABLE = SQL_CREATE_TABLE + LocationEntry.TABLE_NAME + " (" +
                 LocationEntry._ID + " INTEGER PRIMARY KEY," +
-                LocationEntry.COLUMN_LOCATION_SETTING + "TEXT UNIQUE NOT NULL" +
+                LocationEntry.COLUMN_LOCATION_SETTING + " TEXT UNIQUE NOT NULL, " +
                 LocationEntry.COLUMN_CITY_NAME + SQL_TEXT_NOT_NULL +
                 LocationEntry.COLUMN_COORD_LAT + SQL_REAL_NOT_NULL +
                 LocationEntry.COLUMN_COORD_LONG + SQL_REAL_NOT_NULL +
