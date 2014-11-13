@@ -34,13 +34,10 @@ public class TestProvider extends AndroidTestCase {
 
         // If there's an error in those massive SQL table creation Strings,
         // errors will be thrown here when you try to get a writable database.
-        WeatherDbHelper dbHelper = new WeatherDbHelper(mContext);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-
         ContentValues testValues = TestDb.createNorthPoleLocationValues();
 
-        long locationRowId;
-        locationRowId = db.insert(LocationEntry.TABLE_NAME, null, testValues);
+        Uri locationUri = mContext.getContentResolver().insert(LocationEntry.CONTENT_URI, testValues);
+        long locationRowId = ContentUris.parseId(locationUri);
 
         // Verify we got a row back.
         assertTrue(locationRowId != -1);
@@ -112,8 +109,6 @@ public class TestProvider extends AndroidTestCase {
                 null  // sort order
         );
         TestDb.validateCursor(weatherCursor, weatherValues);
-
-        dbHelper.close();
     }
 
     static ContentValues createWeatherValues(long locationRowId) {
